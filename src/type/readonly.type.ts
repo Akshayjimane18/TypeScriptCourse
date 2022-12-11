@@ -1,4 +1,4 @@
-let number: readonly number[] = [1,2,3];
+var number: readonly number[] = [1,2,3];
 
 type readOnlyPerson = readonly [string, string, number];
 
