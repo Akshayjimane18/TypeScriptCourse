@@ -1,21 +1,13 @@
-const map = <T,U>(array1: T[], func: (item: T) => U) => {
+class Person2 {
+    name: string;
+    age: number;
 
-    if (array1.length == 0) {
-        return array1;
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
     }
-    let result = [];
+}
 
-    for (let i = 0; i < array1.length; i++) {
-        result[i] = func(array1[i]);
-
-    }
-
-    return result;
-
-};
-
-let numbers1 = [4,5,6,7];
-
-const converted = map(numbers1,(num)=>num.toString());
-
-console.log(converted);
+let person4: Person2 = new Person2("Akki1", 29);
+person4.name="Mike";
+console.log(person4);
