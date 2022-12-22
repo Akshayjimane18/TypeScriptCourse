@@ -1,34 +1,39 @@
-//Inheritance
+class Person2 {
 
-class User {
-    name: string;
-    email: string;
-    age: number;
+    private testUserAge(age: number) {
+        if (age > 200 || age < 0) {
+            throw new Error("Invalid Age");
+        }
 
-    constructor(name: string, email: string, age: number) {
+        return age;
+    }
 
-        this.name = name;
-        this.email = email;
-        this.age = age;
+    constructor(private _name: string, private _age: number) {
+        this.testUserAge(_age);
+    }
+
+    public set name(name: string) {
+        this._name = name;
+    }
+
+    public get name() {
+        return this._name;
+    }
+
+    public set age(age: number,) {
+        this.testUserAge(age);
+
+        this._age = age;
+    }
+
+    public get age() {
+        if (this._age == undefined) {
+            throw new Error("The property has not set yet");
+        }
+        return this._age;
     }
 }
 
-class AdminUser extends User {
-    isAdmin: boolean = true;
-    usersReporting: number;
-
-    constructor(name: string, email: string, age: number, usersReporting: number) {
-        //super keyword
-        super(name, email, age);
-        this.usersReporting = usersReporting;
-    }
-}
-
-const user: User = new User("John", "john234#gmail.com", 29);
-
-const adminUser: AdminUser = new AdminUser("Mark", "mark@email.com", 22, 5);
-
-console.log(user);
-
-console.log(adminUser);
-
+const person7: Person2 = new Person2("Johny", 32);
+person7.age = 70;
+console.log(person7.age);

@@ -1,28 +1,34 @@
-class Person1 {
+//Inheritance
 
+class User {
     name: string;
     email: string;
+    age: number;
 
-    //constructor
+    constructor(name: string, email: string, age: number) {
 
-    constructor(name: string, email: string) {
-
-        //this keyword 
         this.name = name;
         this.email = email;
+        this.age = age;
     }
-
-    greet() {
-        return `Hello ${this.name}`;
-    }
-
 }
-//instance creation
-const person5 = new Person1("Akki", "Akki@gmail.com");
-const person6 = new Person1("Akki1", "Akki1@gmail.com");
 
-console.log(person5);
-console.log(person5.greet());
+class AdminUser extends User {
+    isAdmin: boolean = true;
+    usersReporting: number;
 
-console.log(person6);
-console.log(person6.greet());
+    constructor(name: string, email: string, age: number, usersReporting: number) {
+        //super keyword
+        super(name, email, age);
+        this.usersReporting = usersReporting;
+    }
+}
+
+const user: User = new User("John", "john234#gmail.com", 29);
+
+const adminUser: AdminUser = new AdminUser("Mark", "mark@email.com", 22, 5);
+
+console.log(user);
+
+console.log(adminUser);
+
