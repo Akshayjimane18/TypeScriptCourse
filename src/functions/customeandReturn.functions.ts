@@ -25,4 +25,4 @@ function convertAgetoMonths(person: Person1): Person1 {
     return person;
 }
 
-//console.log(convertAgetoMonths(personObj));
+console.log(convertAgetoMonths(personObj));

@@ -26,9 +26,9 @@ const filter: Filter = (array: any[], predicate: Function) => {
             result.push(element);
         }
     }
-
-    return result;
     console.log(result);
+    return result;
+    
 };
 
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
